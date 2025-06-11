@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrity Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="#">Person Classifier</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col card-wrapper" data-player="mark">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/mark.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <h4 class="text-uppercase card-title">mark</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col card-wrapper" data-player="elon">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/elon.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <h4 class="text-uppercase card-title">elon</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col card-wrapper" data-player="jeff">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/Jeff Bezos.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <h4 class="text-uppercase card-title">Jeff bezos</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col card-wrapper" data-player="sam">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/Sam Altman.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <h4 class="text-uppercase card-title">Sam altman</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col card-wrapper" data-player="steve">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/Steve jobs.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-2">
+                        <h4 class="text-uppercase card-title">Steve Jobs</h4>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end of .row for celebrity cards -->
+
+        <!-- Upload and Results Section BELOW the images -->
+        <!-- Upload, Result, and Table all in one row -->
+<div class="row mt-7">
+
+    <!-- 1. Upload -->
+    <div class="col-md-4">
+        <form action="/file-upload" class="dropzone" id="dropzone">
+            <div class="dz-message needsclick text-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/1042/1042666.png" width="50vw" height="50vw"><br>
+                <span class="note needsclick">Drop files here or click to upload</span>
+            </div>
+        </form>
+        <div class="text-center mt-3">
+            <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+        </div>
+    </div>
+
+    <!-- 2. Predicted Person Image -->
+    <div class="col-md-4">
+        <div id="resultHolder" class="text-center">
+            <!-- Predicted person image will appear here -->
+        </div>
+        <!-- Error Message -->
+        <div class="error mt-3 text-danger text-center" id="error" style="display:none;">
+            Can't classify image. Classifier was not able to detect face and two eyes properly.
+        </div>
+    </div>
+
+    <!-- 3. Probability Table -->
+    <div class="col-md-4">
+        <div id="divClassTable">
+            <table id="classTable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Celebrity</th>
+                        <th>Probability Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Mark</td><td id="score_mark"></td></tr>
+                    <tr><td>Elon</td><td id="score_elon"></td></tr>
+                    <tr><td>Jeff Bezos</td><td id="score_jeff"></td></tr>
+                    <tr><td>Sam Altman</td><td id="score_sam"></td></tr>
+                    <tr><td>Steve Jobs</td><td id="score_steve"></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+</html>
