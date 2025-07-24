@@ -15,11 +15,6 @@ A machine learning project that classifies an image to identify which **tech fou
 - Flask
 - HTML/CSS/JS
 
-## 📌 Future Plans
-- Improve prediction robustness with more training data
-- Enhance UI for better image interaction
-- Deploy as a web app
-
 ## 💡 Contributions
 Feedback and contributions are **highly encouraged**! Feel free to fork, raise issues, or suggest new features.
 
