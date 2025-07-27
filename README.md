@@ -6,6 +6,7 @@ A machine learning project that classifies an image to identify which **tech fou
 
 ## 🔍 Project Summary
 - Image classification using a custom-trained model
+- SVM worked best with accuracy **76%**
 - Flask web app to upload images and get predictions
 - Frontend built with HTML, CSS, JavaScript
 
